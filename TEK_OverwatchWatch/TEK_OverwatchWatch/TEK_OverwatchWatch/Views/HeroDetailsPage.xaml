@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TEK_OverwatchWatch.Views.HeroDetailsPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Grid.RowSpan="2" Grid.Row="0" Source="{Binding ImageUrl}" />
+            <Label Grid.Column="1" Grid.Row="0" Text="{Binding Name}" FontSize="22" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+            <StackLayout Grid.Column="1" Grid.Row="1" Padding="20">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Health:" FontAttributes="Bold"/>
+                    <Label Text="{Binding Health}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Armour:" FontAttributes="Bold"/>
+                    <Label Text="{Binding Armour}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Shield:" FontAttributes="Bold"/>
+                    <Label Text="{Binding Shield}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Real name:" FontAttributes="Bold"/>
+                    <Label Text="{Binding Real_Name}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Age:" FontAttributes="Bold"/>
+                    <Label Text="{Binding Age}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Height:" FontAttributes="Bold"/>
+                    <Label Text="{Binding Height}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Affiliation:" FontAttributes="Bold"/>
+                    <Label Text="{Binding Affiliation}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Base of operations:" FontAttributes="Bold"/>
+                    <Label Text="{Binding Base_Of_Operations}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Difficulty:" FontAttributes="Bold"/>
+                    <Label Text="{Binding Difficulty}"/>
+                </StackLayout>
+                <WebView Source="{Binding Video}"></WebView>
+            </StackLayout>
+            <ListView x:Name="MyListView"
+                      Grid.Row="2"
+                      Grid.Column="0"
+                      Grid.ColumnSpan="2"
+                      CachingStrategy="RecycleElement">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Name}" FontSize="22" FontAttributes="Bold" />
+                                <Label Text="{Binding Description}" TextColor="Gray" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
