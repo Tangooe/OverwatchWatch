@@ -7,7 +7,8 @@
         <SearchBar x:Name="MySearchBar" TextChanged="SearchBar_OnTextChanged"></SearchBar>
         <ListView x:Name="MyListView"
               ItemSelected="MyListView_OnItemSelected"
-              CachingStrategy="RecycleElement">
+              CachingStrategy="RecycleElement"
+                  HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -22,7 +23,7 @@
                             </Grid.ColumnDefinitions>
 
                             <Image Grid.Column="0" Grid.RowSpan="2" Source="{Binding ImageUrl}" />
-                            <Label Grid.Column="1" Grid.Row="0" Text="{Binding Name}" FontSize="22" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+                            <Label Grid.Column="1" Grid.Row="0" Text="{Binding Name}"  FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
                             <Label Grid.Column="1" Grid.Row="1" Text="{Binding Description}" TextColor="Gray" HorizontalOptions="CenterAndExpand" />
                         </Grid>
                     </ViewCell>

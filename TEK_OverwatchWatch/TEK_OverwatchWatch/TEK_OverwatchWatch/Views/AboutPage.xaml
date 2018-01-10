@@ -4,6 +4,7 @@
              x:Class="TEK_OverwatchWatch.Views.AboutPage">
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="OverwatchWatch by: Emil Ekman"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

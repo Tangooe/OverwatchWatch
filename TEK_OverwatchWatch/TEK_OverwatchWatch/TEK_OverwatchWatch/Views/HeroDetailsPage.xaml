@@ -10,12 +10,12 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="105"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Image Grid.Column="0" Grid.RowSpan="2" Grid.Row="0" Source="{Binding ImageUrl}" />
-            <Label Grid.Column="1" Grid.Row="0" Text="{Binding Name}" FontSize="22" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
-            <StackLayout Grid.Column="1" Grid.Row="1" Padding="20">
+            <Image Grid.Column="0" Grid.RowSpan="2" Grid.Row="0" Source="{Binding ImageUrl}"/>
+            <Label Grid.Column="1" Grid.Row="0" Text="{Binding Name}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+            <StackLayout Grid.Column="1" Grid.Row="1" Padding="5">
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Health:" FontAttributes="Bold"/>
                     <Label Text="{Binding Health}"/>
@@ -28,7 +28,7 @@
                     <Label Text="Shield:" FontAttributes="Bold"/>
                     <Label Text="{Binding Shield}"/>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" MinimumHeightRequest="40">
                     <Label Text="Real name:" FontAttributes="Bold"/>
                     <Label Text="{Binding Real_Name}"/>
                 </StackLayout>
@@ -40,12 +40,12 @@
                     <Label Text="Height:" FontAttributes="Bold"/>
                     <Label Text="{Binding Height}"/>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" MinimumHeightRequest="40">
                     <Label Text="Affiliation:" FontAttributes="Bold"/>
                     <Label Text="{Binding Affiliation}"/>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Base of operations:" FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal" MinimumHeightRequest="40">
+                    <Label Text="Base:" FontAttributes="Bold"/>
                     <Label Text="{Binding Base_Of_Operations}"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
@@ -58,12 +58,13 @@
                       Grid.Row="2"
                       Grid.Column="0"
                       Grid.ColumnSpan="2"
-                      CachingStrategy="RecycleElement">
+                      CachingStrategy="RecycleElement"
+                      HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="10">
-                                <Label Text="{Binding Name}" FontSize="22" FontAttributes="Bold" />
+                                <Label Text="{Binding Name}" FontAttributes="Bold" />
                                 <Label Text="{Binding Description}" TextColor="Gray" />
                             </StackLayout>
                         </ViewCell>
